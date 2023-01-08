@@ -1,5 +1,5 @@
 class SystemVariable < ActiveRecord::Base
-  belongs_to :configuration
+  belongs_to :configuration, :class_name => 'DawnBoot::Configuration'
   @@cache = Hash.new
 
   def self.dump_vars
@@ -10,7 +10,7 @@ class SystemVariable < ActiveRecord::Base
   end
 
   def self.default
-    Configuration.default.system_variables
+    DawnBoot::Configuration.default.system_variables
   end
 
   def self.lookup(thing)
@@ -20,7 +20,7 @@ class SystemVariable < ActiveRecord::Base
   def self.findormake(thing)
     v = self.lookup(thing)
     if v.nil?
-      v = Configuration.default.system_variables.new
+      v = DawnBoot::Configuration.default.system_variables.new
       v.variable = thing.to_s
 
       if block_given?
