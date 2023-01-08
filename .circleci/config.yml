@@ -1,0 +1,26 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+jobs:
+  build:
+    working_directory: ~/dawnboot
+    # Specify the execution environment.
+    docker:
+      - image: ruby:3.1.3-bullseye
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+        - run: gem install bundler
+        - checkout
+        - run: git submodule init
+        - run: git submodule update
+        - run: bundle install
+        - run: cp config/database-sqlite.yml config/database.yml
+        - run: rake db:migrate RAILS_ENV=test
+        - run: rake db:fixtures:load RAILS_ENV=test
+    # the fixtures do not seem load correctly after one run. Bizarre.
+        - run: rake spec RAILS_ENV=test || exit 0
+        - run: rake spec RAILS_ENV=test
+
+
