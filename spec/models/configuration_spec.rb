@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Configuration, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "should have a default configuration entry" do
+    expect(Configuration.default).to_not be_nil
+  end
+
 end
