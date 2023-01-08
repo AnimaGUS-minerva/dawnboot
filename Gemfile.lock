@@ -190,6 +190,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  actionpack (~> 7.0.4)
   bootsnap
   debug
   importmap-rails
