@@ -1,41 +1,18 @@
 one:
   id:       1
+  configuration_id: 1
   variable: bar
   value:    34
 
 two:
+  configuration_id: 1
   id:       2
   variable: baz
   value:    0
 
 hostname:
+  configuration_id: 1
   id: 9
   variable: 'hostname'
   value: 'fountain-test.example.com'
 
-acpdomain:
-  id: 10
-  variable: 'acp_domain'
-  value: 'acp.example.com'
-
-# this is an ACPAddress which has been through Marshall dump.
-acppool:
-  id: 11
-  variable: 'acp_pool'
-  value: "BAhvOg9BQ1BBZGRyZXNzCToMQGdyb3Vwc1sNaQJz/WkCwp9pAjQ8aQIRQGkCMyJpAlVEaQBpADoNQGFkZHJlc3NJIixmZDczOjlmYzI6M2MzNDo0MDExOjIyMzM6NDQ1NTowMDAwOjAwMDAGOgZFVDoQQGNvbXByZXNzZWRJIiRmZDczOjlmYzI6M2MzNDo0MDExOjIyMzM6NDQ1NTo6BjsIRjoMQHByZWZpeG86GUlQQWRkcmVzczo6UHJlZml4MTI4BjsKaWU="
-
-
-register:
-  id: 12
-  variable: 'registrar_id'
-  value: "01122334455"
-
-animaacp:
-  id: 13
-  variable: 'anima_acp'
-  value: 1
-
-acp_prefix:
-  id: 14
-  variable: 'acp_prefix'
-  value: "fd00:1234:5678::/48"

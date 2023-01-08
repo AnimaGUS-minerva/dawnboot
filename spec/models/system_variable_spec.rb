@@ -10,6 +10,11 @@ RSpec.describe SystemVariable, type: :model do
     expect(l.value).to    eq(34.to_s)
   end
 
+  it "should have an associated configuration" do
+    l = system_variables(:one)
+    expect(l.configuration).to_not be_nil
+  end
+
   it "should look up name by symbol" do
     l = SystemVariable.lookup(:bar)
     expect(l).to_not be_nil

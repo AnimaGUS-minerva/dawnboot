@@ -1,5 +1,5 @@
 class SystemVariable < ActiveRecord::Base
-
+  belongs_to :configuration
   @@cache = Hash.new
 
   def self.dump_vars
@@ -9,14 +9,18 @@ class SystemVariable < ActiveRecord::Base
     true
   end
 
+  def self.default
+    Configuration.default.system_variables
+  end
+
   def self.lookup(thing)
-    self.find_by_variable(thing.to_s)
+    self.default.find_by_variable(thing.to_s)
   end
 
   def self.findormake(thing)
     v = self.lookup(thing)
     if v.nil?
-      v = self.new
+      v = Configuration.default.system_variables.new
       v.variable = thing.to_s
 
       if block_given?
