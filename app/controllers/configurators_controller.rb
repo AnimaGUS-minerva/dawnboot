@@ -4,4 +4,8 @@ class ConfiguratorsController < ApplicationController
     @config = DawnBoot::Configuration.default
   end
 
+  def start
+    @config = DawnBoot::Configuration.default
+  end
+
 end
