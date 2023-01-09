@@ -1,1 +1,15 @@
-Hello!
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>IPv6</th>
+    <th>IPv4</th>
+  </tr>
+  <% @netplan.active_interfaces.each { |name,ifn| %>
+  <tr>
+    <td><%= name %></td>
+    <td><%= ifn.ipv6 %></td>
+    <td><%= ifn.ipv4 %></td>
+  </tr>
+  <% } %>
+</table>
