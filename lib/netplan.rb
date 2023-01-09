@@ -16,7 +16,7 @@ class Netplan
   end
 
   def parse_file(file = "/etc/netplan/01-netplan.yml")
-    file = File.open(file)
+    file = File.open(File.join(rootdir,file))
     parse_yaml(file.read)
   end
 
