@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_000315) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "configurations", force: :cascade do |t|
+  create_table "dawn_boot_configurations", force: :cascade do |t|
     t.text "name"
     t.boolean "active"
     t.datetime "lastused_at"
@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_000315) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "system_variables", id: :serial, force: :cascade do |t|
+  create_table "system_variables", force: :cascade do |t|
     t.integer "configuration_id"
     t.string "variable"
     t.string "value"

@@ -1,4 +1,4 @@
-class CreateSystemVariables < ActiveRecord::Migration[4.2]
+class CreateSystemVariables < ActiveRecord::Migration[7.0]
   def self.up
     create_table :system_variables do |t|
       t.column :configuration_id, :integer
