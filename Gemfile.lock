@@ -1,5 +1,6 @@
-PATH
-  remote: ../netlinkrb
+GIT
+  remote: https://github.com/AnimaGUS-minerva/netlinkrb.git
+  revision: 885990c5b3764521b9636567f78c2cb86b96abf8
   specs:
     netlinkrb (0.18)
       ffi

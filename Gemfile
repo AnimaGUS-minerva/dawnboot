@@ -32,7 +32,7 @@ gem "bootsnap", require: false
 gem "actionpack", "~> 7.0.4.1"
 gem "activerecord", ">= 7.0.4.1"
 
-gem "netlinkrb", :path => "../netlinkrb"
+gem "netlinkrb", :git => "https://github.com/AnimaGUS-minerva/netlinkrb.git"
 
 # for dependabot reports
 gem "rack", "~> 2.2.6.3"
