@@ -3,6 +3,9 @@ require 'open3'
 
 class DawnBoot::Networkstatus < ApplicationRecord
 
+  def self.most_recent
+    order(:updated_at => "DESC").first
+  end
 
   def gather_data
     ip = Linux::Netlink::Route::Socket.new

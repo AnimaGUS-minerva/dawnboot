@@ -1,0 +1,7 @@
+recent:
+  id: 1
+  success: true
+  inprogress: false
+  testresults: {"v4_defroute": "192.168.7.1", "v6_defroute":"fe80::1", "v4_addrs":"[192.168.7.2]", "v6_addrs":"[2001:db8::2]"}
+  created_at: '2021-01-01T13:00'
+  updated_at: '2021-01-01T14:00'
